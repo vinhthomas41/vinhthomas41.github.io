@@ -1,6 +1,6 @@
 layout: page
 title: "AWESOME"
-permalink: /about/contact
+permalink: /about/contact/
 
 
 HELLO
