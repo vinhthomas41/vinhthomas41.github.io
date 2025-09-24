@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'GloryMigella';
+    src: url('glory_migella_regular-webfont.woff2') format('woff2'),
+         url('glory_migella_regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+*{
+    background: transparent;
+}
+html{
+    background-color: rgb(209, 143, 222);
+}
+.header {
+    margin: 30;
+    padding: 20;
+    font-family: 'GloryMigella';
+    text-align: center;
+    background: #cd5dd7;
+    color: white;
+}
