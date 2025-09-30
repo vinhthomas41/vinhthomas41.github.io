@@ -43,9 +43,21 @@ body > header > nav > ul *:hover{
     color:black;
     transition-duration: 150ms;
 }
-article{
-    tab-size: 4;
-    background-color: rgba(255, 255, 255, 0.8);
-    margin: 100px;
-    margin-top: 20px;
+@media screen {
+    
 }
+@media(min-width: 50em) {
+    article .main-page {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    article .main-page > div:nth-child(2){
+        max-width: 20em;
+    }
+}
+article{
+
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
