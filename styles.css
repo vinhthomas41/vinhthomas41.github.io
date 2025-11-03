@@ -10,9 +10,15 @@
 *{
     background: transparent;
 }
+
 html{
     background-color: rgb(209, 143, 222);
 }
+
+body {
+    overflow: hidden;
+}
+
 .center {
     display: flex;
     justify-content: center;
