@@ -8,8 +8,8 @@
 }
 
 @keyframes backgroundAnimation {
-    0% {right: -20vw;}
-    100% {right: -3.5vw;}
+    0% {right: -200px;}
+    100% {right: 30px;}
 }
 
 *{
@@ -26,6 +26,10 @@ html{
     position: absolute;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    object-fit: cover;
+    height: 100vh;
+    width: auto;
+    transform: scale(1.1);
 }
 
 body {
