@@ -39,11 +39,13 @@ body {
 }
 
 .center #box {
+    position:absolute;
     box-sizing: border-box;
     width: 98.5vw;
-    height: 97vh;
+    height: 98vh;
     border: 2px white;
     border-style: solid;
+    margin-bottom: 2vh;
 }
 
 
