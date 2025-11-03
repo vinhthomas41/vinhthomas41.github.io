@@ -7,12 +7,25 @@
 
 }
 
+@keyframes backgroundAnimation {
+    0% {right: -20vw;}
+    100% {right: -3.5vw;}
+}
+
 *{
     background: transparent;
 }
 
 html{
-    background-color: rgb(209, 143, 222);
+  background-image: linear-gradient(45deg, #E0A7E5, #B755FE);  
+}
+
+.backgroundMoving {
+    animation-name: backgroundAnimation;
+    animation-duration: 5s;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 body {
@@ -28,13 +41,12 @@ body {
     margin: 0;
     font-family: 'GloryMigella';
     color: white;
-    
 }   
 
-.center h1 {
+.center .portfolio{
     position: absolute;
     x: center;
-    font-size: 72px;
+    font-size: 76px;
     text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
