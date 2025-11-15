@@ -4,7 +4,13 @@
          url('Font/glory_migella_regular-webfont.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'Meritta';
+    src: url('Font/meritta_serif-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @keyframes backgroundAnimation {
@@ -20,7 +26,7 @@ html{
   background-image: linear-gradient(45deg, #E0A7E5, #B755FE);  
 }
 
-.backgroundMoving {
+.background {
     animation-name: backgroundAnimation;
     animation-duration: 5s;
     position: absolute;
@@ -43,7 +49,7 @@ body {
     vertical-align: auto;
     min-height: 100vh;
     margin: 0;
-    font-family: 'GloryMigella';
+    font-family: 'Meritta';
     color: white;
 }   
 
@@ -60,6 +66,7 @@ body {
     width: 98.5vw;
     height: 98vh;
     border: 2px white;
+    border-radius: 20px;
     border-style: solid;
     margin-bottom: 2vh;
 }
