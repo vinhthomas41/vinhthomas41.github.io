@@ -13,9 +13,21 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'MomoTrust';
+    src: url('Font/MomoTrustDisplay-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 @keyframes backgroundAnimation {
     0% {right: -200px;}
     100% {right: 30px;}
+}
+
+@keyframes expandDialog {
+    0% {opacity: 0; transform: scale(0.5);}
+    100% {opacity: 100; transform: scale(1.0);}
 }
 
 *{
@@ -27,15 +39,16 @@ html{
 }
 
 .background {
+    position: absolute;
     animation-name: backgroundAnimation;
     animation-duration: 5s;
     position: absolute;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     object-fit: cover;
-    height: 100vh;
     width: auto;
     transform: scale(1.1);
+    z-index: 0;
 }
 
 body {
@@ -44,6 +57,7 @@ body {
 
 .center {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     vertical-align: auto;
@@ -54,7 +68,8 @@ body {
 }   
 
 .center .portfolio{
-    position: absolute;
+    position: relative;
+    text-align: center;
     x: center;
     font-size: 76px;
     text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.2);
@@ -69,6 +84,48 @@ body {
     border-radius: 20px;
     border-style: solid;
     margin-bottom: 2vh;
+}
+
+#navigation > ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+}
+
+#navigation > ul > li{
+    margin-right: 1vw;
+    position: relative;
+    background-color: white;
+    color: black;
+    border: 2px white;
+    width: 10vw;
+    height: 6vh;
+    border-radius: 4px;
+    z-index: 1;
+    box-shadow: black;
+    text-align: center;
+    place-content: center;
+}
+
+#navigation > ul > li:hover{
+    cursor: pointer;
+}
+
+#projectPopup {
+    background-color: white;
+    border-color: white;
+    border-radius: 16px;
+    height: 40vh;
+    width: 50vw;
+    animation-name: expandDialog;
+    animation-duration: 0.25S;
+    font-family: 'MomoTrust';
+}
+
+#projectPopup::backdrop {
+    background-color: transparent;
 }
 
 
