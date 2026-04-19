@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'GloryMigella';
     src: url('Font/glory_migella_regular-webfont.woff2') format('woff2'),
-         url('Font/glory_migella_regular-webfont.woff') format('woff');
+        url('Font/glory_migella_regular-webfont.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
@@ -20,29 +20,36 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'ARS Maquette Pro';
+    src: url('Font/ARSMaquettePro-Black.woff2') format('woff2'),
+        url('Font/ARSMaquettePro-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
 @keyframes backgroundAnimation {
-    0% {right: -200px;}
-    100% {right: 30px;}
+    0% {
+        right: -200px;
+    }
+
+    100% {
+        right: 30px;
+    }
 }
 
-@keyframes expandDialog {
-    0% {opacity: 0; transform: scale(0.5);}
-    100% {opacity: 100; transform: scale(1.0);}
-}
-
-*{
+* {
     background: transparent;
 }
 
-html{
-  background-image: linear-gradient(45deg, #E0A7E5, #B755FE);  
+html {
+    background-image: linear-gradient(45deg, #E0A7E5, #B755FE);
 }
 
 .background {
     position: absolute;
     animation-name: backgroundAnimation;
     animation-duration: 5s;
-    position: absolute;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     object-fit: cover;
@@ -60,33 +67,35 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    vertical-align: auto;
     min-height: 100vh;
     margin: 0;
     font-family: 'Meritta';
     color: white;
-}   
+}
 
-.center .portfolio{
+.center .portfolio {
     position: relative;
     text-align: center;
-    x: center;
     font-size: 76px;
     text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.2);
+    transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+
+.center .portfolio.pushed {
+    transform: translateY(-25vh);
 }
 
 .center #box {
-    position:absolute;
+    position: absolute;
     box-sizing: border-box;
     width: 98.5vw;
     height: 98vh;
-    border: 2px white;
+    border: 2px solid white;
     border-radius: 20px;
-    border-style: solid;
     margin-bottom: 2vh;
 }
 
-#navigation > ul {
+#navigation>ul {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -94,39 +103,77 @@ body {
     list-style-type: none;
 }
 
-#navigation > ul > li{
+#navigation>ul>li {
     margin-right: 1vw;
     position: relative;
     background-color: white;
     color: black;
-    border: 2px white;
     width: 10vw;
     height: 6vh;
     border-radius: 4px;
     z-index: 1;
-    box-shadow: black;
     text-align: center;
     place-content: center;
 }
 
-#navigation > ul > li:hover{
+#navigation>ul>li:hover {
     cursor: pointer;
 }
 
-#projectPopup {
-    background-color: white;
-    border-color: white;
+.about-btn {
+    position: relative;
+    z-index: 10;
+    transition: opacity 0.2s ease;
+}
+.about-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.panel {
+    position: fixed;
+    background: white;
     border-radius: 16px;
-    height: 40vh;
+    overflow: hidden;
+    z-index: 20;
+    width: 90px;
+    height: 36px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    transition: width 0.4s cubic-bezier(0.4,0,0.2,1),
+                height 0.4s cubic-bezier(0.4,0,0.2,1),
+                border-radius 0.4s ease,
+                opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.panel.open {
     width: 50vw;
-    animation-name: expandDialog;
-    animation-duration: 0.25S;
-    font-family: 'MomoTrust';
+    height: 40vh;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 1.5rem;
+    font-family: 'ARS Maquette Pro';
 }
 
-#projectPopup::backdrop {
-    background-color: transparent;
+.panel-inner {
+    opacity: 0;
+    transition: opacity 0.2s ease 0.3s;
 }
+.panel.open .panel-inner { opacity: 1; }
 
-
-    
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #888;
+    opacity: 0;
+    transition: opacity 0.2s ease 0.3s;
+}
+.panel.open .close-btn { opacity: 1; }

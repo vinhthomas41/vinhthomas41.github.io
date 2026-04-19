@@ -1,32 +1,50 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-      <title>Awesome</title>
-        <link rel = "stylesheet" type = "text/css" href = "styles.css">
-    </head>
-      <body>
-        <div class = "background">
-              <img src = "Background/Scrolling_Image2.png" width = 7680px>
-        </div>
-        <div class = "center">
-          <div class = "portfolio">Portfolio</div>
-          <div class = "pages">
-            <nav id = "navigation">
-              <ul>
-                <li id = "about">About</li>
-                <dialog id="projectPopup">
-                  <button id="closePopup">X</button>
-                  <h1>HELLO!</h1>
-                  <p>My name is Thomas Vinh. I'm currently a student at the University of Texas at Austin, majoring in Computer Science.</p>
-                  <p>Right now, I have many interests, including Cybersecurity, Actuarial Science, and Software Engineering!</p>
-                </dialog>
-                <li></li>
-              </ul>
-            </nav>
-          </div>
-          <div id="box"></div>
-        </div>
-        <script src = 'script.js'></script>
-      </body>
+
+<head>
+  <title>Awesome</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div class="background">
+    <img src="Background/Scrolling_Image2.png" width=7680px>
+  </div>
+  <div class="center">
+    <div class="portfolio">Portfolio</div>
+    <div class="pages">
+      <nav id="navigation">
+        <ul>
+          <li id="aboutBtn" class="about-btn" onclick="openPanel('about')">About</li>
+          <li id="projectsBtn" class="about-btn" onclick="openPanel('projects')">Projects</li>
+          <li id="contactBtn" class="about-btn" onclick="openPanel('contact')">Contact</li>
+        </ul>
+      </nav>
+    </div>
+    <div id="box"></div>
+  </div>
+
+  <div class="panel" id="panel-about">
+    <button class="close-btn" onclick="closePanel('about')">✕</button>
+    <div class="panel-inner">
+      <h1>HELLO!</h1>
+      <p>My name is Thomas Vinh. I'm currently a student at the University of Texas at Austin, majoring in Computer
+        Science.</p>
+      <p>I have many interests, including Cybersecurity, Actuarial Science, and Software Engineering!</p>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-projects">
+    <button class="close-btn" onclick="closePanel('projects')">✕</button>
+    <div class="panel-inner"></div>
+  </div>
+
+  <div class="panel" id="panel-contact">
+    <button class="close-btn" onclick="closePanel('contact')">✕</button>
+    <div class="panel-inner"></div>
+  </div>
+
+  <script src='script.js'></script>
+</body>
+
 </html>
