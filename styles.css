@@ -103,7 +103,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-text.pushed {
@@ -131,8 +131,8 @@ body {
 #navigation>ul>li {
     margin-right: 1vw;
     position: relative;
-    background: rgba(255,255,255,0.15);
-    border: 1.5px solid rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
     color: white;
     width: 10vw;
     height: 6vh;
@@ -147,7 +147,7 @@ body {
 
 #navigation>ul>li:hover {
     cursor: pointer;
-    background: rgba(255,255,255,0.28);
+    background: rgba(255, 255, 255, 0.28);
     transform: translateY(-2px);
 }
 
@@ -174,10 +174,10 @@ body {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     opacity: 0;
-    transition: width 0.4s cubic-bezier(0.4,0,0.2,1),
-                height 0.4s cubic-bezier(0.4,0,0.2,1),
-                border-radius 0.4s ease,
-                opacity 0.4s ease;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        border-radius 0.4s ease,
+        opacity 0.4s ease;
     pointer-events: none;
 }
 
@@ -195,7 +195,9 @@ body {
     transition: opacity 0.2s ease 0.3s;
 }
 
-.panel.open .panel-inner { opacity: 1; }
+.panel.open .panel-inner {
+    opacity: 1;
+}
 
 .close-btn {
     position: absolute;
@@ -210,7 +212,9 @@ body {
     transition: opacity 0.2s ease 0.3s;
 }
 
-.panel.open .close-btn { opacity: 1; }
+.panel.open .close-btn {
+    opacity: 1;
+}
 
 .chips {
     display: flex;
@@ -246,7 +250,7 @@ body {
 
 .project-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(183,85,254,0.18);
+    box-shadow: 0 8px 24px rgba(183, 85, 254, 0.18);
 }
 
 .project-card h3 {
@@ -299,7 +303,7 @@ body {
 }
 
 /* ── Mobile overrides ── */
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
     body {
         position: fixed;
         width: 100%;
@@ -310,7 +314,11 @@ body {
         background-image: linear-gradient(45deg, #E0A7E5, #B755FE);
         min-height: 100%;
     }
-    
+
+    .center #box {
+        display: none;
+    }
+
     .center .portfolio {
         font-size: 13vw;
     }
@@ -319,11 +327,28 @@ body {
         font-size: 12px;
     }
 
+    .center {
+        padding: 0;
+        width: 100%;
+    }
+
+    .pages {
+        width: 100%;
+    }
+
+    #navigation>ul {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
     #navigation>ul>li {
+        margin-right: 0;
+        margin: 0 1.5vw;
         width: 26vw;
         height: 5vh;
         font-size: 13px;
-        margin-right: 2vw;
     }
 
     .panel.open {
