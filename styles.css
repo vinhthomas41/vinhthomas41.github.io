@@ -38,7 +38,7 @@
     }
 }
 
-*:not(html):not(body) {
+* {
     background: transparent;
 }
 
@@ -300,6 +300,17 @@ body {
 
 /* ── Mobile overrides ── */
 @media (max-width: 600px) {
+    body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    html {
+        background-image: linear-gradient(45deg, #E0A7E5, #B755FE);
+        min-height: 100%;
+    }
+    
     .center .portfolio {
         font-size: 13vw;
     }
