@@ -62,6 +62,10 @@ body {
     overflow: hidden;
 }
 
+*:not(html):not(body) {
+    background: transparent;
+}
+
 @media (max-width: 600px) {
     body {
         position: fixed;
