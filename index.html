@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Awesome</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -11,7 +12,10 @@
     <img src="Background/Scrolling_Image2.png" width=7680px>
   </div>
   <div class="center">
-    <div class="portfolio">Portfolio</div>
+    <div class="main-text">
+      <div class="portfolio">Portfolio</div>
+      <div class="hero-sub">Thomas Vinh | CS @ UT Austin · Cybersecurity · Software Engineering</div>
+    </div>
     <div class="pages">
       <nav id="navigation">
         <ul>
@@ -23,27 +27,59 @@
     </div>
     <div id="box"></div>
   </div>
-
   <div class="panel" id="panel-about">
     <button class="close-btn" onclick="closePanel('about')">✕</button>
     <div class="panel-inner">
-      <h1>HELLO!</h1>
+      <h1>Hello!</h1>
       <p>My name is Thomas Vinh. I'm currently a student at the University of Texas at Austin, majoring in Computer
         Science.</p>
       <p>I have many interests, including Cybersecurity, Actuarial Science, and Software Engineering!</p>
+      <div class="chips">
+        <span class="chip">Cybersecurity</span>
+        <span class="chip">Actuarial Science</span>
+        <span class="chip">Software Engineering</span>
+      </div>
     </div>
   </div>
-
   <div class="panel" id="panel-projects">
     <button class="close-btn" onclick="closePanel('projects')">✕</button>
-    <div class="panel-inner"></div>
+    <div class="panel-inner">
+      <h1>Projects</h1>
+      <div class="projects-grid">
+        <a href="https://github.com/Longhorn-Developers/UT-Lectures-Plus" target="_blank"
+          style="text-decoration: none; color: inherit;">
+          <div class="project-card">
+            <h3>Lectures Online</h3>
+            <p>Browser extension to reformat UT lecture titles for clarity.</p>
+          </div>
+        </a>
+        <div class="project-card">
+          <h3>Full-Stack Game Database</h3>
+          <p>A project utilizing React and Firebase to create a user-personalized database.</p>
+        </div>
+      </div>
+    </div>
   </div>
-
   <div class="panel" id="panel-contact">
     <button class="close-btn" onclick="closePanel('contact')">✕</button>
-    <div class="panel-inner"></div>
+    <div class="panel-inner">
+      <h1>Get in Touch</h1>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:you@example.com">
+          <div class="contact-icon">✉️</div>
+          <span>you@example.com</span>
+        </a>
+        <a class="contact-link" href="https://github.com/yourhandle" target="_blank">
+          <div class="contact-icon">🐙</div>
+          <span>github.com/yourhandle</span>
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/yourhandle" target="_blank">
+          <div class="contact-icon">💼</div>
+          <span>linkedin.com/in/yourhandle</span>
+        </a>
+      </div>
+    </div>
   </div>
-
   <script src='script.js'></script>
 </body>
 

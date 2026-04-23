@@ -78,10 +78,27 @@ body {
     text-align: center;
     font-size: 76px;
     text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.2);
-    transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
 }
 
-.center .portfolio.pushed {
+.hero-sub {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    opacity: 0.75;
+    margin-top: 8px;
+    letter-spacing: 0.05em;
+    padding: 0 16px;
+}
+
+.main-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-text.pushed {
     transform: translateY(-25vh);
 }
 
@@ -106,18 +123,24 @@ body {
 #navigation>ul>li {
     margin-right: 1vw;
     position: relative;
-    background-color: white;
-    color: black;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    color: white;
     width: 10vw;
     height: 6vh;
-    border-radius: 4px;
+    border-radius: 100px;
     z-index: 1;
     text-align: center;
     place-content: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.2s, transform 0.2s;
 }
 
 #navigation>ul>li:hover {
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-2px);
 }
 
 .about-btn {
@@ -125,6 +148,7 @@ body {
     z-index: 10;
     transition: opacity 0.2s ease;
 }
+
 .about-btn.hidden {
     opacity: 0;
     pointer-events: none;
@@ -142,10 +166,10 @@ body {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     opacity: 0;
-    transition: width 0.4s cubic-bezier(0.4,0,0.2,1),
-                height 0.4s cubic-bezier(0.4,0,0.2,1),
-                border-radius 0.4s ease,
-                opacity 0.4s ease;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        border-radius 0.4s ease,
+        opacity 0.4s ease;
     pointer-events: none;
 }
 
@@ -162,7 +186,10 @@ body {
     opacity: 0;
     transition: opacity 0.2s ease 0.3s;
 }
-.panel.open .panel-inner { opacity: 1; }
+
+.panel.open .panel-inner {
+    opacity: 1;
+}
 
 .close-btn {
     position: absolute;
@@ -176,4 +203,120 @@ body {
     opacity: 0;
     transition: opacity 0.2s ease 0.3s;
 }
-.panel.open .close-btn { opacity: 1; }
+
+.panel.open .close-btn {
+    opacity: 1;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.chip {
+    background: linear-gradient(135deg, #E0A7E5, #B755FE);
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 6px 14px;
+    border-radius: 100px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.project-card {
+    background: linear-gradient(135deg, #f5e9ff, #ede0ff);
+    border-radius: 14px;
+    padding: 18px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(183, 85, 254, 0.18);
+}
+
+.project-card h3 {
+    font-size: 15px;
+    color: #5b21b6;
+    margin-bottom: 6px;
+}
+
+.project-card p {
+    font-size: 13px;
+    color: #6b46a0;
+    line-height: 1.5;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: #f8f4ff;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: background 0.15s, transform 0.15s;
+}
+
+.contact-link:hover {
+    background: #ede8ff;
+    transform: translateX(4px);
+}
+
+.contact-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #E0A7E5, #B755FE);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* ── Mobile overrides ── */
+@media (max-width: 600px) {
+    .center .portfolio {
+        font-size: 13vw;
+    }
+
+    .hero-sub {
+        font-size: 12px;
+    }
+
+    #navigation>ul>li {
+        width: 26vw;
+        height: 5vh;
+        font-size: 13px;
+        margin-right: 2vw;
+    }
+
+    .panel.open {
+        width: 88vw;
+        height: 60vh;
+    }
+
+    .main-text.pushed {
+        transform: translateY(-20vh);
+    }
+}

@@ -1,7 +1,7 @@
 function openPanel(name) {
     document.getElementById(name + 'Btn').classList.add('hidden');
     document.getElementById('panel-' + name).classList.add('open');
-    document.querySelector('.portfolio').classList.add('pushed');
+    document.querySelector('.main-text').classList.add('pushed');
 }
 
 function closePanel(name) {
@@ -16,7 +16,7 @@ function closePanel(name) {
 
     setTimeout(() => {
         panel.classList.remove('open');
-        document.querySelector('.portfolio').classList.remove('pushed');
+        document.querySelector('.main-text').classList.remove('pushed');
     }, 150);
 
     setTimeout(() => {
